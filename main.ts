@@ -83,7 +83,7 @@ function runServo() {
 
 pins.setPull(SWITCH_COLOR, PinPullMode.PullUp);
 maqueen.servoRun(SERVO, 90);
-pause(1000);
+pause(87000);
 if (pins.digitalReadPin(SWITCH_COLOR) == Color.Yellow) {
     if (PAMI_IS_SUPERSTAR) {
         runYellowSuperstar();
