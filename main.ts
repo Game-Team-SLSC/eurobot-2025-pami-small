@@ -32,7 +32,17 @@ const movers = {
 }
 
 function runYellowGroupie() {
-    // TODO
+    movers.forward()
+    basic.pause(1000)
+    movers.turnRight()
+    basic.pause(500)
+    movers.forward()
+    basic.pause(1000)
+    movers.turnLeft()
+    basic.pause(400)
+    movers.forward()
+    basic.pause(2000)
+    movers.stop()
 }
 
 function runYellowSuperstar() {
@@ -40,7 +50,17 @@ function runYellowSuperstar() {
 }
 
 function runBlueGroupie() {
-    // TODO
+    movers.forward()
+    basic.pause(1000)
+    movers.turnLeft()
+    basic.pause(500)
+    movers.forward()
+    basic.pause(750)
+    movers.turnRight()
+    basic.pause(460)
+    movers.forward()
+    basic.pause(2000)
+    movers.stop()
 }
 
 function runBlueSuperstar() {
@@ -63,7 +83,7 @@ function runServo() {
 
 pins.setPull(SWITCH_COLOR, PinPullMode.PullUp);
 maqueen.servoRun(SERVO, 90);
-pause(87000);
+pause(1000);
 if (pins.digitalReadPin(SWITCH_COLOR) == Color.Yellow) {
     if (PAMI_IS_SUPERSTAR) {
         runYellowSuperstar();
