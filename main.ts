@@ -2,6 +2,8 @@ const FW_L = 190
 const FW_R = 240
 
 const PAMI_IS_SUPERSTAR: boolean = false
+const COUNTDOWN = 89000
+const TEST = false;
 
 const SWITCH_COLOR = DigitalPin.P2
 const SERVO = maqueen.Servos.S1
@@ -41,7 +43,7 @@ function runYellowGroupie() {
     movers.turnLeft()
     basic.pause(400)
     movers.forward()
-    basic.pause(2000)
+    basic.pause(750)
     movers.stop()
 }
 
@@ -59,7 +61,7 @@ function runBlueGroupie() {
     movers.turnRight()
     basic.pause(460)
     movers.forward()
-    basic.pause(2000)
+    basic.pause(750)
     movers.stop()
 }
 
@@ -83,7 +85,7 @@ function runServo() {
 
 pins.setPull(SWITCH_COLOR, PinPullMode.PullUp);
 maqueen.servoRun(SERVO, 90);
-pause(87000);
+pause(TEST? 2000: COUNTDOWN);
 if (pins.digitalReadPin(SWITCH_COLOR) == Color.Yellow) {
     if (PAMI_IS_SUPERSTAR) {
         runYellowSuperstar();
